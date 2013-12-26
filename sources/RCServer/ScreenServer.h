@@ -1,5 +1,7 @@
+#include <Bitmap.h>
 #include <Locker.h>
 #include <OS.h>
+#include <Rect.h>
 
 class ClientIO;
 

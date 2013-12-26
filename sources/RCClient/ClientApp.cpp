@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <errno.h>
-#include <net/netdb.h>
+#include <netdb.h>
 
 #include "ControlWindow.h"
 #include "InputClient.h"
