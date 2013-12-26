@@ -1,6 +1,6 @@
 #include <string.h>
 
-#include "dbout.h"
+//#include "dbout.h"
 #include "proto.h"
 #include "RCInputDevice.h"
 
@@ -18,7 +18,7 @@ RCInputDevice::RCInputDevice() :
 	mInit=RegisterDevices(nervousDeviceList);
 	if(mInit!=B_OK)
 	{
-		dbout <<"couldn't register device -- " <<strerror(mInit) <<endl;
+		//dbout <<"couldn't register device -- " <<strerror(mInit) <<endl;
 		return;
 	}
 	
@@ -26,14 +26,14 @@ RCInputDevice::RCInputDevice() :
 	if(mThid<0)
 	{
 		mInit=mThid;
-		dbout <<"couldn't spawn thread -- " <<strerror(mInit) <<endl;
+		//dbout <<"couldn't spawn thread -- " <<strerror(mInit) <<endl;
 		return;
 	}
 	
 	mInit=resume_thread(mThid);
 	if(mInit<0)
 	{
-		dbout <<"couldn't resume thread -- " <<strerror(mInit) <<endl;
+		//dbout <<"couldn't resume thread -- " <<strerror(mInit) <<endl;
 		return;
 	}
 	
@@ -41,7 +41,7 @@ RCInputDevice::RCInputDevice() :
 	if(mPort<0)
 	{
 		mInit=mPort;
-		dbout <<"couldn't create port -- " <<strerror(mInit) <<endl;
+		//dbout <<"couldn't create port -- " <<strerror(mInit) <<endl;
 		kill_thread(mThid);
 		return;
 	}
@@ -63,14 +63,14 @@ RCInputDevice::~RCInputDevice()
 
 status_t RCInputDevice::InitCheck()
 {
-	dbout <<"mInit==" <<strerror(mInit) <<endl;
+	//dbout <<"mInit==" <<strerror(mInit) <<endl;
 	
 	return mInit;
 }
 
 status_t RCInputDevice::Start(const char *device, void *cookie)
 {
-	dbout <<"start" <<endl;
+	//dbout <<"start" <<endl;
 	mActive=true;
 	return B_OK;
 }
