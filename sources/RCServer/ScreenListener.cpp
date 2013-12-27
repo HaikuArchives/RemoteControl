@@ -1,4 +1,5 @@
 #include <iostream>
+#include <netinet/in.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <errno.h>
@@ -16,13 +17,13 @@ ScreenListener::ScreenListener(int32 sock, char const *passwd) :
 	if(mThid<0)
 	{
 		cerr <<"couldn't spawn thread -- " <<strerror(mThid) <<endl;
-		closesocket(mSock);
+		close(mSock);
 		delete this;
 		return;
 	}
 	if(resume_thread(mThid)!=B_OK)
 	{
-		closesocket(mSock);
+		close(mSock);
 		kill_thread(mThid);
 		delete this;
 		return;
@@ -50,7 +51,7 @@ int32 ScreenListener::ThreadFunc()
 	int32 client;
 	struct sockaddr sa;
 	struct sockaddr_in *sin;
-	int size;
+	socklen_t size;
 	while((client=accept(mSock, &sa, &size))>=0)
 	{
 		sin=(sockaddr_in *)&sa;

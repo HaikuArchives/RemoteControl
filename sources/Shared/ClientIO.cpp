@@ -16,7 +16,7 @@ ClientIO::ClientIO(int32 sock) :
 
 ClientIO::~ClientIO()
 {
-	closesocket(mSock);
+	close(mSock);
 }
 
 void ClientIO::Flush()
@@ -86,5 +86,5 @@ void ClientIO::WriteBytes(const void *buf, int32 size)
 
 int32 ClientIO::CloseSocket()
 {
-	return closesocket(mSock);
+	return close(mSock);
 }
