@@ -1,5 +1,6 @@
 #include <File.h>
 #include <Autolock.h>
+#include <string.h>
 
 #include "Preferences.h"
 

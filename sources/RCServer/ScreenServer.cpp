@@ -20,6 +20,8 @@
 #include "Preferences.h"
 #include "Password.h"
 
+using namespace std;
+
 ScreenServer::ScreenServer(ClientIO *clio, int32 address, char const *passwd) :
 	mClio(clio),
 	mThid(B_ERROR),

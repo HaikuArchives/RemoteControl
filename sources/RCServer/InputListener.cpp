@@ -8,6 +8,8 @@
 #include "InputServer.h"
 #include "InputListener.h"
 
+using namespace std;
+
 InputListener::InputListener(int32 sock, char const *passwd) :
 	mSock(sock),
 	mPasswd(passwd)

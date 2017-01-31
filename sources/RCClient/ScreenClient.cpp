@@ -19,6 +19,8 @@
 #include "proto.h"
 #include "Password.h"
 
+using namespace std;
+
 ScreenClient::ScreenClient(ClientIO *clio, char const *passwd) :
 	mClio(clio),
 	mQuit(false),
