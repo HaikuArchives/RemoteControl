@@ -1,7 +1,7 @@
-#include <fstream.h>
+#include <fstream>
 
 #ifdef DBOUT_TO_STDOUT
-extern ostream &dbout;
+extern std::ostream &dbout;
 #else
-extern ofstream dbout;
+extern std::ofstream dbout;
 #endif

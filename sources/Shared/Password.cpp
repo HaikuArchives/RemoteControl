@@ -1,6 +1,7 @@
 #include "Password.h"
 #include "ClientIO.h"
 #include "proto.h"
+#include <string.h>
 
 Password::Password(ClientIO *clio) :
 	mClio(clio)

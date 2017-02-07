@@ -9,6 +9,8 @@
 #include "ScreenServer.h"
 #include "ScreenListener.h"
 
+using namespace std;
+
 ScreenListener::ScreenListener(int32 sock, char const *passwd) :
 	mSock(sock),
 	mPasswd(passwd)

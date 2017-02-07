@@ -1,4 +1,4 @@
-#include <iostream.h>
+#include <iostream>
 #include <netinet/in.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,6 +14,8 @@
 #include "MyApp.h"
 #include "InputListener.h"
 #include "ScreenListener.h"
+
+using namespace std;
 
 struct
 {

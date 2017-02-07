@@ -8,6 +8,8 @@
 #include "proto.h"
 #include "Password.h"
 
+using namespace std;
+
 InputServer::InputServer(ClientIO *clio, char const *passwd) :
 	mClio(clio),
 	mThid(B_ERROR),

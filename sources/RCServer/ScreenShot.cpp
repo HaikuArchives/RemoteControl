@@ -5,6 +5,8 @@
 
 #include "ScreenShot.h"
 
+using namespace std;
+
 ScreenShot::ScreenShot() :
 	mShot(0)
 {
@@ -70,7 +72,7 @@ void ScreenShot::Refresh(bool draw_cursor)
 	}
 }
 
-status_t ScreenShot::ReadBitmap(BBitmap *buffer, BRect *bounds=0)
+status_t ScreenShot::ReadBitmap(BBitmap *buffer, BRect *bounds)
 {
 	if(!mShot)
 		return B_ERROR;
@@ -96,7 +98,7 @@ status_t ScreenShot::ReadBitmap(BBitmap *buffer, BRect *bounds=0)
 	return B_OK;
 }
 
-status_t ScreenShot::GetBitmap(BBitmap **buffer, BRect *bounds=0)
+status_t ScreenShot::GetBitmap(BBitmap **buffer, BRect *bounds)
 {
 	if((!buffer) || (!mShot))
 		return B_ERROR;

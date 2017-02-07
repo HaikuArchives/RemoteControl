@@ -55,7 +55,7 @@ void InputClient::SendMessage(const BMessage *msg)
 	}
 }
 
-void InputClient::EnableFilter(bool enable=true)
+void InputClient::EnableFilter(bool enable)
 {
 	if(enable)
 		mClio->WriteBytes(&RCMessage::EnableFilter, sizeof(int32));

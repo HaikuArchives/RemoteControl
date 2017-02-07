@@ -14,6 +14,8 @@
 
 #include "ClientApp.h"
 
+using namespace std;
+
 ClientApp::ClientApp() :
 	BApplication("application/x-vnd.Titoz-RemoteControlClient"),
 	mInputClient(0),
